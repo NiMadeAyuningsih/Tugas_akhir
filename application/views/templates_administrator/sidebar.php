@@ -69,7 +69,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">sub menu transaksi:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Data transaksi</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/transaksi') ?>">Data transaksi</a>
                         
                     </div>
                 </div>
@@ -85,8 +85,8 @@
                 <div id="collapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sub Menu laporan</h6>
-                        <a class="collapse-item" href="login.html">laporan data member</a>
-                        <a class="collapse-item" href="login.html">laporan data transaksi</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/laporan_member') ?>">laporan data member</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/laporan_transaksi') ?>">laporan data transaksi</a>
                     </div>
                 </div>
             </li>
@@ -103,7 +103,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sub Menu pengaturan:</h6>
                         <a class="collapse-item" href="<?php echo base_url('administrator/user') ?>">user</a>
-                        <a class="collapse-item" href="utilities-color.html">tampilan</a>
+                       
                         
                     </div>
                 </div>

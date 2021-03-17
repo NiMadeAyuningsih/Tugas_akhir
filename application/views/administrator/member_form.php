@@ -4,9 +4,9 @@
 	<div class="alert alert-success" role="alert">
     <i class="fas fa-users"></i> form input member
 	</div>
-	
 
-	<form method="post" action=" <?php echo base_url('administrator/member/input_aksi') ?>">
+
+	<form method="post" action="<?php echo base_url('administrator/member/input_aksi') ?>">
 		<div class="form-group">
 			<label>id_member</label>
 			<input type="text" name="id_member" placeholder="masukan id member" class="form-control">
@@ -21,15 +21,30 @@
 
 		<div class="form-group">
 			<label>nama_paket</label>
-			<input type="text" name="nama_paket" placeholder="masukan nama paket" class="form-control">
-			<?php echo form_error('nama_paket', '<div class="text-danger small" ml-3>') ?>
+			<select class="form-control" name="nama_paket">
+			<?php 
+		foreach ($paket as $pkt) : ?>
+			<option value="<?php echo $pkt->nama_paket; ?>"> <?php echo $pkt->nama_paket; ?>	</option>
+				<?php endforeach; ?>
+
+			</select>
 		</div>
 
 		<div class="form-group">
-			<label>jenis_kelamin</label>
-			<select></select>
-			<input type="text" name="jenis_kelamin" placeholder="masukan jenis_kelamin" class="form-control">
-			<?php echo form_error('jenis_kelamin', '<div class="text-danger small" ml-3>') ?>
+			<label>nama_trainer</label>
+			<select class="form-control" name="nama_trainer">
+			<?php 
+		foreach ($trainer as $tnr) : ?>
+			<option value="<?php echo $tnr->nama_trainer; ?>"> <?php echo $tnr->nama_trainer; ?>	</option>
+				<?php endforeach; ?>
+
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>jenis_kelamin</label>			
+			<input type="radio" name="jenis_kelamin" value="Laki-Laki"> Laki-Laki" <br> 
+			<input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan" <br> 
 		</div>
 
 		<div class="form-group">

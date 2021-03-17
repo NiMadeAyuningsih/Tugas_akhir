@@ -4,6 +4,8 @@
     <i class="fas fa-users"></i> form update user
 	</div>
 
+	<?php echo $this->session->flashdata('pesan') ?>
+
 	<?php foreach ($user as $usr) :  ?>
 
 		<form method="post" action=" <?php echo base_url('administrator/user/update_aksi') ?>">

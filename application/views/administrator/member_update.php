@@ -4,6 +4,8 @@
     <i class="fas fa-users"></i> form update member
 	</div>
 
+	<?php echo $this->session->flashdata('pesan') ?>
+
 	<?php foreach($member as $mbr) : ?>
 
 		<form method="post" action=" <?php echo base_url('administrator/member/update_aksi') ?>">
@@ -14,14 +16,31 @@
 			</div>
 
 			<div class="form-group">
-				<label>nama paket</label>
-				<input type="text" name="nama_paket" class="form-control" value=" <?php echo $mbr->nama_paket ?>">	
-			</div>
+			<label>nama_paket</label>
+			<select class="form-control" name="nama_paket">
+			<?php 
+				foreach ($paket as $pkt) : ?>
+			<option value="<?php echo $pkt->nama_paket; ?>"> <?php echo $pkt->nama_paket; ?>	</option>
+				<?php endforeach; ?>
 
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>nama_trainer</label>
+			<select class="form-control" name="nama_trainer">
+			<?php 
+		foreach ($trainer as $tnr) : ?>
+			<option value="<?php echo $tnr->nama_trainer; ?>"> <?php echo $tnr->nama_trainer; ?>	</option>
+				<?php endforeach; ?>
+			</select>
+
+		</div>
 			<div class="form-group">
-				<label>jenis kelamin</label>
-				<input type="text" name="jenis_kelamin" class="form-control" value=" <?php echo $mbr->jenis_kelamin ?>">				
-			</div>
+			<label>jenis_kelamin</label>			
+			<input type="radio" name="jenis_kelamin" value="Laki-Laki"> Laki-Laki" <br> 
+			<input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan" <br> 
+		</div>
 
 			<div class="form-group">
 				<label>alamat</label>
@@ -35,12 +54,13 @@
 
 			<div class="form-group">
 				<label>tgl_daftar</label>
-				<input type="date" name="tgl_daftar" class="form-control" value=" <?php echo $mbr->tgl_daftar ?>">			
+				<input type="date" name="tgl_daftar" class="form-control" value="<?php echo $mbr->tgl_daftar ?>">			
 			</div>
+
 
 			<div class="form-group">
 				<label>tgl_experied</label>
-				<input type="date" name="tgl_experied" class="form-control" value=" <?php echo $mbr->tgl_experied ?>">		
+				<input type="date" name="tgl_experied" class="form-control" value="<?php echo $mbr->tgl_experied ?>">		
 			</div>
 
 			<div class="form-group">

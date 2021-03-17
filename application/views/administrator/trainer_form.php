@@ -26,6 +26,12 @@
 		</div>
 
 		<div class="form-group">
+			<label>waktu</label>
+			<input type="text" name="waktu" placeholder="masukan waktu" class="form-control">
+			<?php echo form_error('waktu', '<div class="text-danger small" ml-3>') ?>
+		</div>
+
+		<div class="form-group">
 			<label>bayaran</label>
 			<input type="text" name="bayaran" placeholder="masukan harga bayaran" class="form-control">
 			<?php echo form_error('bayaran', '<div class="text-danger small" ml-3>') ?>

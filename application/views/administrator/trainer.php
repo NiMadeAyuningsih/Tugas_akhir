@@ -3,6 +3,8 @@
     <i class="fas fa-users"></i> Trainer
 	</div>
 
+	<?php echo $this->session->flashdata('pesan') ?>
+
 	<?php echo anchor('administrator/trainer/input','<button class="btn btn-sm btn-primary mb-3"><i class="fas fa plus fa-sm"></i> Tambah Trainer</button>') ?>
 	
 	<table class="table table-bordered table-striped table-hover">
@@ -11,6 +13,7 @@
 			<th>Id trainer</th>
 			<th>Nama trainer</th>
 			<th>no hp</th>
+			<th>waktu</th>
 			<th>bayaran</th>
 			<th colspan="2">Aksi</th>
 		</tr>
@@ -22,6 +25,7 @@
 				<td><?php echo $tnr->id_trainer; ?></td>
 				<td><?php echo $tnr->nama_trainer; ?></td>
 				<td><?php echo $tnr->no_hp; ?></td>
+				<td><?php echo $tnr->waktu; ?></td>
 				<td><?php echo $tnr->bayaran; ?></td>
 				
 

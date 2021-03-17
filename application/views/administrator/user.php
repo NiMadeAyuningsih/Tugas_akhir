@@ -3,6 +3,8 @@
     <i class="fas fa-users"></i> user
 	</div>
 
+	<?php echo $this->session->flashdata('pesan') ?>
+
 	<?php echo anchor('administrator/user/input','<button class="btn btn-sm btn-primary mb-3"><i class="fas fa plus fa-sm"></i> Tambah User</button>') ?>
 	
 	<table class="table table-bordered table-striped table-hover">

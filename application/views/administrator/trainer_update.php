@@ -4,6 +4,8 @@
     <i class="fas fa-users"></i> form update Trainer
 	</div>
 
+	<?php echo $this->session->flashdata('pesan') ?>
+
 	<?php foreach ($trainer as $tnr) :  ?>
 
 		<form method="post" action=" <?php echo base_url('administrator/trainer/update_aksi') ?>">
@@ -17,6 +19,11 @@
 			<div class="form-group">
 				<label>no_hp</label>
 				<input type="text" name="no_hp" class="form-control" value=" <?php echo $tnr->no_hp ?>">	
+			</div>
+
+			<div class="form-group">
+				<label>waktu</label>
+				<input type="text" name="waktu" class="form-control" value=" <?php echo $tnr->waktu ?>">	
 			</div>
 
 			<div class="form-group">

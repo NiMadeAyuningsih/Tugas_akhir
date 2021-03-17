@@ -18,6 +18,15 @@ class member_model extends CI_Model
 	{
 		return $this->db->get_where($table,$where);
 	}
+
+	public function cari_data($keyword)
+	{
+		$this->db->select('*');
+		$this->db->from('member');
+		$this->db->like('nama',$keyword);
+		return $this->db->get()->result();
+
+	}
 	public function update_data($where,$data,$table)
 	{
 		$this->db->where($where);

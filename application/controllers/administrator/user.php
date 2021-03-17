@@ -45,18 +45,18 @@ class user extends CI_Controller
 			);
 
 			$this->user_model->input_data($data);
-			$this->session->set_flashdata('pesan','data berhasil ditambahkan');
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert"> data berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span aria-hidden="true">&times;</span> </button> </div>' );
 			redirect('administrator/user');
 		}
 	}
 
 	public function _rules()
 	{
-		$this->form_validation->set_rules('id_user', 'id_user','required');
-		$this->form_validation->set_rules('username','username','required');
-		$this->form_validation->set_rules('password','password','required');
-		$this->form_validation->set_rules('email','email','required');
-		$this->form_validation->set_rules('level','level','required');
+		$this->form_validation->set_rules('id_user', 'id_user','required',['required' => 'id user wajib diisi']);
+		$this->form_validation->set_rules('username','username','required',['required' => 'username wajib diisi']);
+		$this->form_validation->set_rules('password','password','required',['required' => 'password wajib diisi']);
+		$this->form_validation->set_rules('email','email','required',['required' => 'email wajib diisi']);
+		$this->form_validation->set_rules('level','level','required',['required' => 'level wajib diisi']);
 
 	}
 
@@ -90,6 +90,7 @@ class user extends CI_Controller
 		$where = array(
 			'id_user' => $id );
 		$this->user_model->update_data($where,$data,'user');
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert"> data berhasil di update <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span aria-hidden="true">&times;</span> </button> </div>' );
 		redirect('administrator/user');
 	}
 
@@ -97,6 +98,7 @@ class user extends CI_Controller
 	{
 		$where = array('id_user' => $id );
 		$this->user_model->hapus_data($where,'user');
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert"> data berhasil di hapus <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span aria-hidden="true">&times;</span> </button> </div>' );
 		redirect('administrator/user');
 	}
 }

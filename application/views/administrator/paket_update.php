@@ -4,6 +4,8 @@
     <i class="fas fa-users"></i> form update paket
 	</div>
 
+	<?php echo $this->session->flashdata('pesan') ?>
+
 	<?php foreach ($paket as $pkt) :  ?>
 
 		<form method="post" action=" <?php echo base_url('administrator/paket/update_aksi') ?>">

@@ -41,16 +41,16 @@ class paket extends CI_Controller
 			);
 
 			$this->paket_model->input_data_paket($data);
-			$this->session->set_flashdata('pesan','data berhasil ditambahkan');
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert"> data berhasil ditambahkan <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span aria-hidden="true">&times;</span> </button> </div>' );
 			redirect('administrator/paket');
 		}
 	}
 
 	public function _rules()
 	{
-		$this->form_validation->set_rules('id_paket', 'id_paket','required');
-		$this->form_validation->set_rules('nama_paket','nama_paket','required');
-		$this->form_validation->set_rules('harga_paket','harga_paket','required');
+		$this->form_validation->set_rules('id_paket', 'id_paket','required',['required' => 'id paket wajib diisi']);
+		$this->form_validation->set_rules('nama_paket','nama_paket','required',['required' => ' paket wajib diisi']);
+		$this->form_validation->set_rules('harga_paket','harga_paket','required',['required' => 'harga paket wajib diisi']);
 
 	}
 
@@ -80,6 +80,7 @@ class paket extends CI_Controller
 		$where = array(
 			'id_paket' => $id );
 		$this->paket_model->update_data_paket($where,$data,'paket');
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert"> data berhasil di update <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span aria-hidden="true">&times;</span> </button> </div>' );
 		redirect('administrator/paket');
 	}
 
@@ -87,6 +88,7 @@ class paket extends CI_Controller
 	{
 		$where = array('id_paket' => $id );
 		$this->paket_model->hapus_data_paket($where,'paket');
+		$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert"> data berhasil di hapus <button type="button" class="close" data-dismiss="alert" aria-label="close"> <span aria-hidden="true">&times;</span> </button> </div>' );
 		redirect('administrator/paket');
 	}
 }
